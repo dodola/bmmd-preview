@@ -1,0 +1,19 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- 渐变背景 -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="128" height="128" rx="16" fill="url(#bg-gradient)"/>
+  
+  <!-- 内部圆角矩形 -->
+  <rect x="16" y="16" width="96" height="96" rx="12" fill="rgba(255,255,255,0.2)"/>
+  
+  <!-- Markdown 符号 # -->
+  <text x="64" y="80" font-family="sans-serif" font-size="72" font-weight="bold" 
+        text-anchor="middle" fill="white">#</text>
+</svg>

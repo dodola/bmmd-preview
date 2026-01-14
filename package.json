@@ -1,0 +1,313 @@
+{
+  "name": "bmmd-preview",
+  "displayName": "bm.md Markdown Preview",
+  "description": "增强的 Markdown 预览插件，提供丰富的排版样式和多平台导出能力",
+  "version": "0.1.0",
+  "publisher": "dodola",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dodola/bmmd-preview"
+  },
+  "bugs": {
+    "url": "https://github.com/dodola/bmmd-preview/issues"
+  },
+  "homepage": "https://github.com/dodola/bmmd-preview#readme",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "markdown",
+    "preview",
+    "wechat",
+    "zhihu",
+    "juejin",
+    "export",
+    "styling",
+    "theme"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "bmmd.showPreview",
+        "title": "打开预览",
+        "category": "bm.md",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "bmmd.showPreviewToSide",
+        "title": "在侧边打开预览",
+        "category": "bm.md",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "bmmd.copyAsWechat",
+        "title": "复制为微信公众号格式",
+        "category": "bm.md"
+      },
+      {
+        "command": "bmmd.copyAsZhihu",
+        "title": "复制为知乎格式",
+        "category": "bm.md"
+      },
+      {
+        "command": "bmmd.copyAsJuejin",
+        "title": "复制为掘金格式",
+        "category": "bm.md"
+      },
+      {
+        "command": "bmmd.copyAsHtml",
+        "title": "复制为 HTML",
+        "category": "bm.md"
+      },
+      {
+        "command": "bmmd.exportAsImage",
+        "title": "导出为图片",
+        "category": "bm.md"
+      },
+      {
+        "command": "bmmd.changeMarkdownStyle",
+        "title": "切换 Markdown 样式",
+        "category": "bm.md"
+      },
+      {
+        "command": "bmmd.changeCodeTheme",
+        "title": "切换代码主题",
+        "category": "bm.md"
+      },
+      {
+        "command": "bmmd.editCustomCss",
+        "title": "编辑自定义 CSS",
+        "category": "bm.md"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "bmmd.showPreview",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v",
+        "when": "editorLangId == markdown"
+      },
+      {
+        "command": "bmmd.copyAsWechat",
+        "key": "ctrl+shift+w",
+        "mac": "cmd+shift+w",
+        "when": "editorLangId == markdown"
+      },
+      {
+        "command": "bmmd.changeMarkdownStyle",
+        "key": "ctrl+shift+m",
+        "mac": "cmd+shift+m",
+        "when": "editorLangId == markdown"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "bmmd.showPreviewToSide",
+          "when": "editorLangId == markdown",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "bmmd.showPreview",
+          "when": "editorLangId == markdown",
+          "group": "bmmd@1"
+        },
+        {
+          "command": "bmmd.copyAsWechat",
+          "when": "editorLangId == markdown",
+          "group": "bmmd@2"
+        },
+        {
+          "command": "bmmd.copyAsZhihu",
+          "when": "editorLangId == markdown",
+          "group": "bmmd@3"
+        },
+        {
+          "command": "bmmd.copyAsJuejin",
+          "when": "editorLangId == markdown",
+          "group": "bmmd@4"
+        },
+        {
+          "command": "bmmd.copyAsHtml",
+          "when": "editorLangId == markdown",
+          "group": "bmmd@5"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "bmmd.showPreview",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "bmmd.showPreviewToSide",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "bmmd.copyAsWechat",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "bmmd.copyAsZhihu",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "bmmd.copyAsJuejin",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "bmmd.copyAsHtml",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "bmmd.exportAsImage",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "bmmd.changeMarkdownStyle",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "bmmd.changeCodeTheme",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "bmmd.editCustomCss",
+          "when": "editorLangId == markdown"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "bm.md Markdown Preview",
+      "properties": {
+        "bmmd.markdownStyle": {
+          "type": "string",
+          "default": "ayu-light",
+          "enum": [
+            "ayu-light",
+            "bauhaus",
+            "blueprint",
+            "botanical",
+            "green-simple",
+            "maximalism",
+            "neo-brutalism",
+            "newsprint",
+            "organic",
+            "playful-geometric",
+            "professional",
+            "retro",
+            "sketch",
+            "terminal"
+          ],
+          "description": "默认 Markdown 排版样式"
+        },
+        "bmmd.codeTheme": {
+          "type": "string",
+          "default": "kimbie-light",
+          "enum": [
+            "andromeeda",
+            "aurora-x",
+            "catppuccin-latte",
+            "catppuccin-mocha",
+            "github-dark",
+            "github-light",
+            "kimbie-dark",
+            "kimbie-light",
+            "min-dark",
+            "min-light",
+            "nord",
+            "one-dark-pro",
+            "rose-pine-dawn",
+            "vitesse-dark"
+          ],
+          "description": "默认代码块高亮主题"
+        },
+        "bmmd.customCss": {
+          "type": "string",
+          "default": "",
+          "description": "自定义 CSS 样式"
+        },
+        "bmmd.enableFootnoteLinks": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否将链接转换为脚注（微信公众号格式）"
+        },
+        "bmmd.openLinksInNewWindow": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否在新窗口打开链接"
+        },
+        "bmmd.enableScrollSync": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否启用编辑器与预览的滚动同步"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run build",
+    "build": "tsup",
+    "build:dev": "tsup --config tsup.config.dev.ts",
+    "dev": "tsup --config tsup.config.dev.ts --watch",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:perf": "node scripts/performance-test.mjs",
+    "package": "node scripts/package.mjs",
+    "package:simple": "vsce package --no-dependencies",
+    "prepare-release": "node scripts/prepare-release.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitest/coverage-v8": "^4.0.17",
+    "@vscode/vsce": "^2.22.0",
+    "eslint": "^8.0.0",
+    "morphdom": "^2.7.7",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "dependencies": {
+    "@types/hast": "^3.0.4",
+    "@types/mdast": "^4.0.4",
+    "highlight.js": "^11.11.1",
+    "juice": "^11.1.0",
+    "katex": "^0.16.27",
+    "mdast-util-from-markdown": "^2.0.2",
+    "mdast-util-gfm": "^3.1.0",
+    "micromark-extension-gfm": "^3.0.0",
+    "rehype-external-links": "^3.0.0",
+    "rehype-github-alert": "^1.0.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "rehype-sanitize": "^6.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "smol-toml": "^1.6.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0",
+    "yaml": "^2.8.2"
+  }
+}
